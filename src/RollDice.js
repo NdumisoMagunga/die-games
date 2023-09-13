@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Die from './Die';
+import './RollDice.css';
 class RollDice extends Component {
     static defaultProps = {
         sides: ['one','two','three','four','five', 'six']
@@ -25,9 +26,11 @@ roll(){
 }
     render(){
         return(
-            <div>
-                <Die face={this.state.die1} />
-                <Die face={this.state.die2} />
+            <div className='rollDice'>
+                <div className='rollDice-inner'>
+                    <Die face={this.state.die1} />
+                    <Die face={this.state.die2} />
+                </div>
                 <button onClick={this.roll}>Roll Dice!</button>
             </div>
         )
